@@ -1,0 +1,405 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    background: linear-gradient(to bottom, #F5E8C7 0%, #e9bf64f4 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #efeae4;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.top-image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.top-image {
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+    max-height: 500px;
+}
+.nav-bar {
+    background-color: #9fdbfe; /* 黄色背景 */
+    padding: 10px 0 0 10px; /* 顶部和左侧添加内边距 */
+    text-align: left; /* 左对齐 */
+    font-size: 0; /* 移除按钮之间的间隙 */
+    margin-top: 0; /* 确保导航栏顶部没有边距 */
+}
+
+.nav-bar  span{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 16px; /* 恢复字体大小 */
+    background-color: #6e8ae4; 
+    border-radius: 10px 10px 0 0; /* 降低顶部圆角度 */
+    margin: 0 5px 0 0; /* 减小按钮之间的间距 */
+    transition: background-color 0.3s;
+}
+.nav-bar span:hover, .nav-bar span.active {
+    background-color: white;
+    color: #5567cc; /* 橙色文字 */
+}
+.content {
+    padding: 20px;
+    line-height: 1.7;
+    padding-left: calc(20px + 20px); /* 添加左侧内边距 */
+    padding-right: calc(20px + 20px); /* 添加右侧内边距 */
+}
+h1 {
+    color: #333;
+    text-align: center;
+}
+.tail{
+    font-size: 40px;
+    color: #333;
+    text-align: center;
+    font-style: italic;
+}
+.tail-2{
+    font-size: 15px;
+    color: #858585;
+    text-align: center;
+    font-style: italic;
+}
+/*overview*/
+.xingtai{
+    line-height: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic; 
+    text-align: center;
+    position: relative;
+    margin-bottom: -10px;
+}
+.xingtai h2, .xingtai h4 {
+    margin-bottom: 10px;
+}
+.overview {
+    overflow:hidden;
+}
+.writing {
+    color:#555555;
+    transition:color 0.3s ease;
+    font-size: 16px;
+}
+.writing:hover {
+    color: #5a8fc8;
+}
+.float-image{
+    float: right;
+    max-width: 40%;
+    margin: 0px 0 0px 20px;
+    transition: transform 0.3s ease;
+}
+.float-image:hover {
+    transform: scale(1.1); /* 鼠标悬停时放大到原尺寸的 1.1 倍 */
+}
+@media screen and (max-width: 768px) {
+    .float-image {
+        float: none;
+        display: block;
+        max-width: 100%;
+        margin: 20px auto;
+    }
+}
+/* 时间轴 按钮 */
+.toggle-button {
+    padding: 8px 15px;
+    background-color: #FFC0CB;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    outline: none;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+.toggle-button:hover {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(255, 184, 217, 0.15);
+    color:#FFC0CB;
+    border-color: #FFC0CB;
+}
+
+.toggle-button:active {
+    background-color: #d0d0d0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transform: translateY(1px);
+}
+.toggle-image {
+    max-width: 100%; /* 确保图片不会超出容器 */
+    height: auto; /* 保持图片比例 */
+    margin-top: 0px; /* 在按钮和图片之间添加一些间距 */
+}
+
+.toggle-button {
+    margin-bottom: 5px; /* 在按钮下方添加一些间距 */
+}
+#textContent {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* 时间轴样式 */
+.timeline {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 100px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.8s;
+    gap: 30px;
+}
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.timeline-content {
+    width: 48%;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+#textContent1, #textContent2, #textContent3,#textContent4,#textContent5,#textContent6,#textContent7{
+    line-height: 1.6;
+    color: #653765;
+    transition: color 0.3s ease;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #faf1fc;
+    font-size: 17px;
+}
+#textContent1:hover,#textContent2:hover,#textContent3:hover,#textContent4:hover,#textContent5:hover,#textContent6:hover,#textContent7:hover{
+    color: #cf87e7d7;
+}
+.timeline-content.left {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: right center;
+}
+
+.timeline-content.right {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+    transform-origin: left center;
+}
+
+/* 统一图片样式 */
+.default-image, .toggle-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+
+
+/* 调整图片容器样式 */
+/* 确保图片在容器中正确显示 */
+.timeline-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 调整图片容器的最小高度 */
+#imageContent {
+    width: 100%;
+    height: 100%;
+    min-height: 200px; /* 确保有足够的空间显示图片 */
+    position: relative;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0; 
+    
+}
+
+.video-container iframe {
+    max-width: 100%; /* 确保视频在小屏幕上也能完全显示 */
+}
+
+.timeline-item:hover .timeline-content.left {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+.timeline-item:hover .timeline-content.right {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+/* 确保右侧内容不会被左侧放大的内容遮挡 */
+.timeline-content.right {
+    position: relative;
+    z-index: 0;
+}
+
+.timeline-content h2 {
+    margin-top: 0;
+    color: rgb(233, 146, 191);
+}
+.timeline-content h4 {
+    margin-top: 0;
+    color: rgb(255, 202, 69);
+}
+
+.timeline-content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* default image large */
+.default-image {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.default-image:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: rotate(-90deg);
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #555;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+    }
+    .timeline-content {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .timeline-marker {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px 0;
+    }
+    .timeline-line {
+        width: 80%;
+        height: 4px;
+        margin: 0 10px;
+    }
+    .diamond {
+        top: -4px;
+        bottom: auto;
+    }
+    .diamond.top {
+        left: -6px;
+        right: auto;
+    }
+    .diamond.bottom {
+        left: auto;
+        right: -6px;
+    }
+}
